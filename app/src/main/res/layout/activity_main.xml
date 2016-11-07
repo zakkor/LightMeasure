@@ -14,35 +14,64 @@
         android:text="Current reading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toStartOf="@+id/textView3" />
 
     <TextView
-        android:text="Average last second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/current"
+        android:textSize="36sp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="14dp"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:text="Average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:layout_below="@+id/current"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignStart="@+id/average" />
 
     <TextView
-        android:text="Hello World!"
+        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/average"
         android:textSize="36sp"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBaseline="@+id/current"
+        android:layout_alignBottom="@+id/current"
+        android:layout_alignEnd="@+id/editText" />
 
     <TextView
+        android:text="Threshold:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/current"
-        android:textSize="36sp"
-        android:layout_below="@+id/textView"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/average"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/bar"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
 </RelativeLayout>
